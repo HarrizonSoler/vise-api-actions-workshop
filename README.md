@@ -1,4 +1,4 @@
-# README — API VISE
+# VISE API - Código aportado por el compañero Estepa
 
 Esta documentación explica **qué hace** cada carpeta/archivo del proyecto, **cómo fluye** una petición, y **cómo probar** la API. El objetivo es mapear 1:1 los requisitos de *Actividad VISE* (restricciones y beneficios por tipo de tarjeta) con la implementación.
 
