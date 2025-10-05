@@ -1,4 +1,4 @@
-name: VISE API testing
+name: Local API testing
 on:
   workflow_dispatch:
     inputs:
