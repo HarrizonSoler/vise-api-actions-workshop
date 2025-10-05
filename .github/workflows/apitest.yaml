@@ -1,4 +1,4 @@
-name: Build container and run VISE API testing
+name: VISE API testing
 on:
   workflow_dispatch:
     inputs:
