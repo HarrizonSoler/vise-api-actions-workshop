@@ -46,6 +46,7 @@ jobs:
           images: ${{ env.IMAGE_URL }}
   test-deploy:
     runs-on: ubuntu-latest
+    needs: build-and-deploy
     steps:
       - name: Setup hurl (API testing tool)
         uses: gacts/install-hurl@v1
