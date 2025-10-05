@@ -44,3 +44,10 @@ jobs:
           app-name: ${{ github.event.inputs.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_HARRIZON }}
           images: ${{ env.IMAGE_URL }}
+  test-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup hurl (API testing tool)
+        uses: gacts/install-hurl@v1
+      - name: Test API
+        run: hurl --variable host=https://{{ github.event.inputs.AZURE_WEBAPP_NAME }}.azurewebsites.net --error-format long --verbose --test session.hurl
