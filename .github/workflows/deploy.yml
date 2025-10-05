@@ -1,4 +1,4 @@
-name: 'Azure Continuous Delivery'
+name: Azure Continuous Delivery
 on:
   workflow_dispatch:
     inputs:
