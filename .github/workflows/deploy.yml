@@ -12,6 +12,10 @@ on:
       AZURE_WEBAPP_NAME:
         description: 'Web App Name (name defined in the App Service creation)'
         required: true
+      PORT:
+        description: 'Port of the application'
+        default: '3000'
+        required: true
   
 env:
   IMAGE_URL: ${{ secrets.ACR_NAME }}.azurecr.io/${{ github.event.inputs.IMAGE_REPOSITORY }}:${{ github.event.inputs.IMAGE_TAG }}
@@ -65,4 +69,4 @@ jobs:
       - name: Setup hurl (API testing tool)
         uses: gacts/install-hurl@v1
       - name: Test API
-        run: hurl --variable host=https://${{ github.event.inputs.AZURE_WEBAPP_NAME }}.azurewebsites.net --error-format long --verbose --test session.hurl
+        run: hurl --variable host=https://${{ github.event.inputs.AZURE_WEBAPP_NAME }}.azurewebsites.net:${{ github.event.inputs.PORT }} --error-format long --verbose --test session.hurl
