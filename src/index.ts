@@ -5,7 +5,7 @@ import app from './app';
 dotenv.config();
 
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 443;
 app.listen(PORT, () => {
 console.log(`API VISE escuchando en puerto ${PORT}`);
 });

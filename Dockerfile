@@ -22,8 +22,8 @@ RUN npm ci --omit=dev
 # copia el build
 COPY --from=builder /app/dist ./dist
 
-ENV PORT=80
-EXPOSE 80
+ENV PORT=443
+EXPOSE 443
 
 HEALTHCHECK --interval=30s --timeout=3s \
   CMD curl -fsS http://127.0.0.1:${PORT}/health || exit 1
