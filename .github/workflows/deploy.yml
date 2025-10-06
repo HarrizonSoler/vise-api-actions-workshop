@@ -57,7 +57,7 @@ jobs:
     needs: [ build-and-push-image, deploy ]
     steps:
       - name: Checkout session.hurl
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
         with:
           sparse-checkout: |
             session.hurl
