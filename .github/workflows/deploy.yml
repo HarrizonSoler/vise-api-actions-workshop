@@ -5,16 +5,17 @@ on:
       IMAGE_REPOSITORY:
         description: 'Repository of the image (same as declared in App Service creation)'
         required: true
+        default: 'api-vise'
       IMAGE_TAG:
         description: 'Tag of the image'
         required: true
         default: 'latest'
       AZURE_WEBAPP_NAME:
-        description: 'Web App Name (name defined in the App Service creation)'
+        description: 'Nombre del App Service creado en Azure'
         required: true
       PORT:
         description: 'Port of the application'
-        default: '3000'
+        default: '443'
         required: true
   
 env:
@@ -69,4 +70,4 @@ jobs:
       - name: Setup hurl (API testing tool)
         uses: gacts/install-hurl@v1
       - name: Test API
-        run: hurl --variable host=https://${{ github.event.inputs.AZURE_WEBAPP_NAME }}.azurewebsites.net:${{ github.event.inputs.PORT }} --connect-timeout 5s --error-format long --verbose --test session.hurl
+        run: hurl --variable host=https://${{ github.event.inputs.AZURE_WEBAPP_NAME }}.azurewebsites.net:${{ github.event.inputs.PORT }} --connect-timeout 20s --error-format long --verbose --test session.hurl
