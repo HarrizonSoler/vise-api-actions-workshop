@@ -15,7 +15,7 @@ on:
         required: true
       PORT:
         description: 'Port of the application'
-        default: '3000'
+        default: '443'
         required: true
   
 env:
